@@ -60,7 +60,9 @@ app = graph.compile()
 print(app.get_graph().draw_mermaid())
 app.get_graph().print_ascii()
 
-response = app.invoke({"messages":[HumanMessage(content="Write me a blogpost on how small businesses can leverage AI to grow")]})
+user_input = input("What topic to research today :: ")
+
+response = app.invoke({"messages":[HumanMessage(content=user_input)]})
 
 print("Parsed response :: ", response["parsed_output"][-1])
 
