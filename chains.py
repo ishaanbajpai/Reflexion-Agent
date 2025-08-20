@@ -48,6 +48,6 @@ revise_instructions = """Revise your previous answer using the new information.
 revisor_chain = actor_agent_prompt.partial(first_instruction=revise_instructions) | llm.bind_tools(tools=[ReviseAnswer], tool_choice="ReviseAnswer")
 
 
-response = first_responder_chain.invoke({
-    "messages": [HumanMessage(content="Write me a blogpost on how small businesses can leverage AI to grow")]
-})
+# response = first_responder_chain.invoke({
+#     "messages": [HumanMessage(content="Write me a blogpost on how small businesses can leverage AI to grow")]
+# })
